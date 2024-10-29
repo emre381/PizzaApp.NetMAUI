@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pizzaApp.MainPage"
+             Title="Pizza App">
+
+<ScrollView>
+        <StackLayout Padding="20">
+
+            <!-- Pizza Picker -->
+            <Label Text="Select Pizza Type" FontAttributes="Bold" />
+            <Picker x:Name="pizzaPicker" />
+
+            <!-- Dough Type Picker -->
+            <Label Text="Select Dough Type" FontAttributes="Bold" />
+            <Picker x:Name="doughPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Thin Crust</x:String>
+                        <x:String>Thick Crust</x:String>
+                        <x:String>Medium Crust</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Extras Checkbox -->
+            <Label Text="Select Extras" FontAttributes="Bold" />
+            <StackLayout>
+                <CheckBox x:Name="extraCheese"/>
+                <Label Text="Extra Cheese"/>
+                <CheckBox x:Name="pepperoni"/>
+                <Label Text="Pepperoni"/>
+                <CheckBox x:Name="mushrooms"/>
+                <Label Text="Mushrooms"/>
+                <CheckBox x:Name="olives"/>
+                <Label Text="Olives"/>
+            </StackLayout>
+
+            <!-- Total Price -->
+            <Button Text="Calculate Total" Clicked="Button_Clicked" />
+            <Label x:Name="totalPriceLabel" Text="Total Price: $" FontSize="Large" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
